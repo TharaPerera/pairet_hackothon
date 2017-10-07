@@ -23,7 +23,28 @@ public class ResourceMapperService {
 	@GET
 	@Path("/{param}")
 	public Response getMsg(@PathParam("param") String msg) {
-		String message = "[ { \"id\": 1, \"name\": \"jack\" }, { \"id\": 2, \"name\": \"paul\" } ]";
+		String message = "[ { \"id\": 1, \"name\": \"Jack - 50%\" }, { \"id\": 2, \"name\": \"Paul - 40%\" } ]";
+		
+		if(msg.contentEquals("java")){
+			message = "[ { \"id\": 3, \"name\": \"Charmi - 70%\" }, { \"id\": 2, \"name\": \"Paul - 30%\" }, { \"id\": 7, \"name\": \"Mahesh - 29%\" } ]";
+				
+		}
+		if(msg.contentEquals("wso2")){
+			message = "[ { \"id\": 4, \"name\": \"Nuwan - 58%\" }, { \"id\": 2, \"name\": \"Paul - 8%\" } ]";
+				
+		}
+		if(msg.contentEquals("cucumber")){
+			message = "[ { \"id\": 5, \"name\": \"Yasas - 78%\" }, { \"id\": 4, \"name\": \"Nuwan - 55%\" } ]";
+				
+		}
+		if(msg.contentEquals("gradle")){
+			message = "[ { \"id\": 6, \"name\": \"Thara - 43%\" }, { \"id\": 2, \"name\": \"Paul - 7%\" }, { \"id\": 3, \"name\": \"Yasas - 3%\" } ]";
+				
+		}
+		if(msg.contentEquals("AWS")){
+			message = "[ { \"id\": 3, \"name\": \"Charmi - 34%\" }, { \"id\": 2, \"name\": \"Paul - 9%\" } ]";
+				
+		}
 		String output = message;
  
 		return Response.status(200).entity(output).build();
